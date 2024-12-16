@@ -1,11 +1,9 @@
-import { Suspense } from 'react'
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
 import img3 from '../assets/img3.png'
 import img4 from '../assets/img4.png'
 import img5 from '../assets/img5.png'
 import img6 from '../assets/img6.png'
-import Loading from './Loading'
 export default function Categories({ Category }) {
     const varCategory = [
         { name: 'Breakfast', color1: 'rgba(112, 130, 70, 0)', color2: 'rgba(112, 130, 70, 10%)', img: img1 },
@@ -24,12 +22,10 @@ export default function Categories({ Category }) {
             <div className='w-full flex flex-wrap gap-20 justify-between items-center mt-[8.1rem]'>
                 {
                     varCategory.map((item, index) => (
-                        <Suspense fallback={<Loading />}>
                             <div key={index} className={`w-[13.5rem] h-[9.5rem] relative flex flex-col items-center justify-end gap-10 rounded-[2rem]`} style={{ background: `linear-gradient(to bottom, ${item.color1}, ${item.color2})` }}>
                                 <img className='w-32 h-32 object-cover absolute top-[-2rem]' src={item.img} alt={item.name} />
                                 <h5>{item.name}</h5>
                             </div>
-                        </Suspense>
                     ))
                 }
             </div>
