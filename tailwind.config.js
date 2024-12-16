@@ -29,7 +29,7 @@ export default {
         primary_Dark_Text: "#F9F9F9",
         primary_Dark_background: "#121212",
       },
-    },
+    }
   },
   plugins: [],
 };

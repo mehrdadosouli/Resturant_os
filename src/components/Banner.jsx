@@ -3,8 +3,10 @@ import img1 from '../assets/img1.jpg';
 import imgbanner from '../assets/imgbanner.png';
 import styles from '../styles/banner.module.css'
 import InfoTemplate from "./InfoTemplate";
-
+import { useState } from "react";
+import Loading from "./Loading";
 function Banner() {
+  const [loading,setLoading]=useState(true)
   const data = [
     { id: 1, name: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, facere molestias ipsam modi, nostrum impedit nobis omnis nam quos, culpa neque enim? Vero officiis laborum aperiam! Ipsum assumenda maiores debitis?' },
     { id: 2, name: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, facere molestias ipsam modi, nostrum impedit nobis omnis nam quos, culpa neque enim? Vero officiis laborum aperiam! Ipsum assumenda maiores debitis?' },
@@ -27,7 +29,7 @@ function Banner() {
             <div key={item.id} className={`${styles.banner} px-5`}>
               <div className="w-1/2 bg-primary_blue_light_100 flex flex-col justify-between items-start rounded-l-3xl md:p-10 p-5">
                 <div className="md:w-60 md:h-20 w-40 h-14 mb-3 bg-white rounded-[30px] flex justify-center items-center gap-5 bg-primary_bg_btn">
-                  <img className="md:w-8 w-6 h-auto" src={imgbanner} alt="" />
+                    <img className="md:w-8 w-6 h-auto" src={imgbanner} alt="" onLoad={() => setLoading(false)}  />
                   <span className="md:text-xl text-base">Hot Recipes</span>
                 </div>
                 <div className="lg:text-6xl md:text-4xl font-morabbaBold lg:leading-[77px] md:leading-[44px]">Spicy delicious chicken wings</div>
@@ -42,7 +44,11 @@ function Banner() {
                 </div>
               </div>
               <div className="w-1/2">
+              {
+                    loading ? 
+                    <Loading /> :
                 <img className="size-full rounded-r-3xl object-cover" src={img1} alt="" />
+              }
               </div>
             </div>
           )

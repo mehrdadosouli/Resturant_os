@@ -4,8 +4,10 @@ import img from '../assets/Official_Icon.png'
 import img2 from '../assets/Oval.png'
 import img3 from '../assets/More.png'
 import img4 from '../assets/Rectangle1.png'
+import Loading from "./Loading";
 
-export default function InstagramCard({ dataInstagram , setDataInstagram }) {  
+export default function InstagramCard({ dataInstagram, setDataInstagram }) {
+    const [loading, setLoading] = useState(true)
     // Slider settings  
     const settings = {
         dots: true,
@@ -40,9 +42,10 @@ export default function InstagramCard({ dataInstagram , setDataInstagram }) {
                     <div className='body relative'>
                         <Slider {...settings}>
                             {
-                                item.galery.map((img, index) => <div key={index}>
-                                    <img src={img} alt="" className="size-full object-cover" />
-                                </div>)
+                                item.galery.map((img, index) =>
+                                    <div key={index}>
+                                        <img src={img} alt="" className="size-full object-cover" onLoad={() => setLoading(false)} />
+                                    </div>)
                             }
                         </Slider>
                         <div className="absolute top-5 right-5 p-1 text-primary_Dark_Text bg-primary_Dark_background rounded-3xl">{`1 / 3`}</div>
@@ -70,7 +73,7 @@ export default function InstagramCard({ dataInstagram , setDataInstagram }) {
                         </div>
                         <div className="flex justify-start items-center my-2">
                             <img src={img2} alt="" />
-                        <p className="font-normal text-xl ml-5 my-2">Liked by craig_love and 44,686 others</p>
+                            <p className="font-normal text-xl ml-5 my-2">Liked by craig_love and 44,686 others</p>
                         </div>
                         <span className="font-semibold text-lg">Foodieland. The vegetables dishes need to have certain vitamin for those spaneople</span>
                         <h5 className="font-normal text-sm text-primary_lighten mt-3">September 19</h5>
