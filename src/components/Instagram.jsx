@@ -18,7 +18,7 @@ export default function Instagram() {
     <div className="px-16 py-52 bg-gradient-to-b from-primary_blue_light_0 to-primary_blue_light_100 relative">
         <div className="max-w-[840px] mx-auto flex flex-col justify-center items-center gap-10 mb-48">
             <h1 className="font-semibold text-5xl text-center">Check out @foodieland on Instagram</h1>
-            <p className="font-normal text-lg text-center">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+            <p className="font-normal text-2xl text-center">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
         </div>
         <InstagramCard dataInstagram={dataInstagram} setDataInstagram={setDataInstagram} />
         <button className='font-semibold text-xl text-white bg-black rounded-3xl px-7 py-4 absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-10'>Visit Our Instagram</button>

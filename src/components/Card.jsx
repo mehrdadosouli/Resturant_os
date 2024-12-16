@@ -8,7 +8,6 @@ export default function Card({ data, clickHandler, bg, coll }) {
             {
                 data?.map(item => (
                     <div key={item.id} className={`h-[45rem] p-5 flex flex-col items-start gap-8 rounded-2xl ${bg && 'bg-gradient-to-b from-primary_blue_light_0 to-primary_blue_light_100'}`}>
-
                         <div className={`size-full bg-cover bg-center rounded-2xl relative`}
                             style={{ backgroundImage: `url(${item.img})` }}>
                             <button className="absolute flex justify-center items-center w-14 h-14 top-5 right-7 bg-white rounded-full" onClick={() => clickHandler(item.id)}>

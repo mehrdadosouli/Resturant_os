@@ -70,9 +70,9 @@ export default function InstagramCard({ dataInstagram , setDataInstagram }) {
                         </div>
                         <div className="flex justify-start items-center my-2">
                             <img src={img2} alt="" />
-                        <p className="font-normal text-base ml-5 my-2">Liked by craig_love and 44,686 others</p>
+                        <p className="font-normal text-xl ml-5 my-2">Liked by craig_love and 44,686 others</p>
                         </div>
-                        <span className="font-semibold text-base">Foodieland. The vegetables dishes need to have certain vitamin for those spaneople</span>
+                        <span className="font-semibold text-lg">Foodieland. The vegetables dishes need to have certain vitamin for those spaneople</span>
                         <h5 className="font-normal text-sm text-primary_lighten mt-3">September 19</h5>
                     </div>
                 </div>)
