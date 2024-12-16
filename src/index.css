@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5% /* makes 1rem 10px */;
+}
+body {
+  font-size: 1.6em; /* default font of 16px */
+  font-family: "morabbaLight";
+  line-height: 1.3;
+  color: #373737;
+}
+/* fonts */
+a {
+  text-decoration: underline;
+}
+ul.slick-dots > li {
+  margin: 0px !important;
+}
+ul.slick-dots > li button::before {
+  color: blue !important;
+}
+.footer.bg-white.p-5 {
+  margin-top: -14px;
+}
+button.slick-arrow {
+  display: none !important;
+}
+@layer base {
+  @font-face {
+    font-family: "morabbaLight";
+    font-style: normal;
+    font-display: swap;
+    src: url("./styles/fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "morabbaMedium";
+    font-style: normal;
+    font-display: swap;
+    src: url("./styles/fonts/Morabba/woff2/Morabba-Medium.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-family: "morabbaBold";
+    font-style: normal;
+    font-display: swap;
+    src: url("./styles/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+  }
+}
+
+@layer utilities {
+}

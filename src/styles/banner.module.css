@@ -1,0 +1,4 @@
+.banner{
+    display: flex !important;
+    max-height: 40rem;
+}
