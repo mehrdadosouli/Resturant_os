@@ -83,7 +83,7 @@ button.slick-arrow {
     height: 100vh;
     box-shadow: 0 0 10px 0px;
     top: 6rem;
-    transform: translateX(100vw);
+    transform: translateX(100%);
     right: 0;
     padding-right: 3rem;
     padding-top: 3rem;
