@@ -42,7 +42,7 @@ function Banner() {
                 </div>
                 <div className="lg:text-6xl md:text-4xl font-morabbaBold lg:leading-[77px] md:leading-[44px]">Spicy delicious chicken wings</div>
                 <div className="text-xl leading-7 font-normal"></div>
-                <InfoTemplate color={true} item={item} />
+                <InfoTemplate color={true} item={item} dir="col"/>
                 <div className="md:w-auto w-full flex justify-center items-center lg:text-2xl lg:gap-5 lg:px-6 lg:py-5 md:text-xl md:px-4 md:py-3 md:gap-3 gap-2 mt-2 rounded-3xl text-white bg-black">
                   <span className="md:text-3xl text-lg py-4">View Recipes</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

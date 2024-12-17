@@ -1,12 +1,11 @@
 import React from 'react'
 
-function InfoTemplate({ color, item }) {
-    // const innerWidth=window.innerWidth
+function InfoTemplate({ color, item, dir }) {
 
     return (
         <div className="flex flex-col space-y-5">
             <span className="text-black lg:text-2xl font-semibold lg:leading-8 md:text-xl md:leading-6">{item?.name}</span>
-            <div className='flex justify-between items-center  gap-3 text-base font-semibold leading-8'>
+            <div className={`flex ${dir ? 'flex-col' : 'flex-row'} justify-between items-center  gap-3 text-base font-semibold leading-8`}>
                 <div className={`md:w-auto w-full flex justify-center items-center gap-3 md:px-4 md:py-4 px-1 py-2 ${color && 'bg-primary_bg_btn'} rounded-3xl`}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="md:size-6 size-5">
                         <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clipRule="evenodd" />

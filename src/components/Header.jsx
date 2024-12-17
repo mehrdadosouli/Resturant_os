@@ -14,17 +14,13 @@ function Header() {
     const clickHandler = () => {
         setShow(!show)
     }
-    console.log(menuItem);
-
     return (
         <div className='relative py-10 px-16'>
             <div className='flex justify-between items-center'>
                 <h1 className="text-2xl leading-[30px]">Foodieland</h1>
-                
                     <tr className={`menu ${innerWith < '1000' ? 'menuMobileshow' && show ? 'menuMobileshow' : 'menuMobilehidden' : 'flex justify-center gap-10'}`}>
                         {menuItem.map(item =><td className='flex justify-start gap-5' key={item.id}><Link className='no-underline' to={item.route}>{item.name}</Link><span>{item.icon}</span></td>)}
                     </tr>
-                
                 <div className={`${innerWith > '1000' ? 'flex justify-end gap-10' : 'hidden'}`}>
                     <Link className='no-underline' to='/'>
                         <span className="[&>svg]:h-[17px] [&>svg]:w-[22px]">
