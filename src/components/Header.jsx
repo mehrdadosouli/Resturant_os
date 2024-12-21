@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -9,19 +9,24 @@ function Header() {
         { id: 4, route: '/', name: 'Contact', icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg> },
         { id: 5, route: '/', name: 'About Us', icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z" /></svg>},
     ]
-    const innerWith = window.innerWidth
+    const [innerWidth,setInnerWidth]=useState('')
     const [show, setShow] = useState(false)
     const clickHandler = () => {
         setShow(!show)
     }
+    useEffect(()=>{
+        window.addEventListener('resize',()=>{
+            setInnerWidth(window.innerWidth)
+        })
+    },[innerWidth])
     return (
         <div className='relative py-10 px-16'>
             <div className='flex justify-between items-center'>
                 <h1 className="text-2xl leading-[30px]">Foodieland</h1>
-                    <tr className={`menu ${innerWith < '1000' ? 'menuMobileshow' && show ? 'menuMobileshow' : 'menuMobilehidden' : 'flex justify-center gap-10'}`}>
-                        {menuItem.map(item =><td className='flex justify-start gap-5' key={item.id}><Link className='no-underline' to={item.route}>{item.name}</Link><span>{item.icon}</span></td>)}
+                <tr className={`menu ${innerWidth < 1000 ? (show ? 'menuMobileshow' : 'menuMobilehidden') : 'flex justify-center gap-10'}`}>  
+                {menuItem.map(item =><td className='flex justify-start gap-5' key={item.id}><Link className='no-underline' to={item.route}>{item.name}</Link> { innerWidth < 1000 && <span>{item.icon}</span> } </td>)}
                     </tr>
-                <div className={`${innerWith > '1000' ? 'flex justify-end gap-10' : 'hidden'}`}>
+                <div className={`${innerWidth > 1000 ? 'flex justify-end gap-10' : 'hidden'}`}>
                     <Link className='no-underline' to='/'>
                         <span className="[&>svg]:h-[17px] [&>svg]:w-[22px]">
                             <svg
@@ -58,7 +63,7 @@ function Header() {
                         </span>
                     </Link>
                 </div>
-                <button onClick={clickHandler} className={`${innerWith < '1000' ? 'flex' : 'hidden'}`}>
+                <button onClick={clickHandler} className={`${innerWidth < 1000 ? 'flex' : 'hidden'}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>

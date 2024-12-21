@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import routes from "../routes"
-
+import "aos/dist/aos.css";
 function AllRoutes() {
     return (
         <>
