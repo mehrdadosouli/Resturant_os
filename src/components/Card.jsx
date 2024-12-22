@@ -17,7 +17,7 @@ export default function Card({ data, clickHandler, bg, coll }) {
                         {
                             loading ?
                                 <Loading /> :
-                                <div className={`size-full bg-cover bg-center rounded-2xl relative`}
+                                <div className={`size-full bg-cover bg-center rounded-2xl relative`} data-aos="flip-right"
                                     style={{ backgroundImage: `url(${item.img})` }}>
                                     <button className="absolute flex justify-center items-center w-14 h-14 top-5 right-7 bg-white rounded-full" onClick={() => clickHandler(item.id)}>
                                         {
