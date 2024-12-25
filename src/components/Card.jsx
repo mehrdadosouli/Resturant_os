@@ -4,10 +4,12 @@ import heart2 from '../assets/Heart2.png'
 import Loading from "./Loading";
 import { useEffect, useState } from "react";
 export default function Card({ data, clickHandler, bg, coll }) {
+    console.log(data);
+    
     const [loading,setLoading]=useState(true)
     useEffect(()=>{
         setLoading(false)
-    },[data])
+    },[])
 
     return (
         <div className={`grid ${coll?.length ? 'lg:grid-cols-3 sm:grid-cols-2' : 'lg:grid-cols-4 sm:grid-cols-3'} grid-cols-1 gap-5`}>
