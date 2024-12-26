@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { products2 } from "../redux/features/CounterSlice";
   
 export default function Foods() {
-    const selector=useSelector(products2)
+    const selector=useSelector(products2)    
     const dispatch=useDispatch()
 
     return (

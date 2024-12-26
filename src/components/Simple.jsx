@@ -3,6 +3,7 @@ import Product from "./Product"
 import { useDispatch, useSelector } from 'react-redux'
 function Simple({bg}) {
     const selector=useSelector(products1)
+    
     const dispatch=useDispatch()
     return (
         <div className="size-full mt-[9.37rem] px-16">

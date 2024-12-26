@@ -11,7 +11,7 @@ import PreFooter from '../components/PreFooter'
 
 function HomePage() {
   return (
-    <div className='overflow-hidden'>
+    <div>
       <Header />
       <Banner />
       <Categories Category="Categories" />

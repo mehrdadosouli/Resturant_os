@@ -3,9 +3,7 @@ import heart from '../assets/Heart.png'
 import heart2 from '../assets/Heart2.png'
 import Loading from "./Loading";
 import { useEffect, useState } from "react";
-export default function Card({ data, clickHandler, bg, coll }) {
-    console.log(data);
-    
+export default function Card({ data, clickHandler, bg, coll }) {    
     const [loading,setLoading]=useState(true)
     useEffect(()=>{
         setLoading(false)
