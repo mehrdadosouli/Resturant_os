@@ -6,7 +6,7 @@ import { LogoTwitter } from "./SvgIconTwitter";
 export default function PreFooter() {
     return (
         <div className="px-16 my-20">
-            <div className="flex justify-between items-center mb-20 border-b-2 border-solid">
+            <div className="flex justify-between items-center mb-10 pb-5 border-b-2 border-solid">
                 <div className="flex flex-col md:text-3xl text-xl">
                     <span className="font-bold italic">Foodieland.</span>
                     <span>Lorem ipsum dolor sit amet, consectetuipisicing elit, </span>

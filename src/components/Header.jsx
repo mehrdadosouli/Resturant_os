@@ -13,8 +13,8 @@ function Header() {
     const [innerWidth, setInnerWidth] = useState('')
     const [show, setShow] = useState(false)
     const [showListLike, setShowListLike] = useState(false)
-    const selector=useSelector(store=>store.products.products1)   
-    const lengthLiked=selector.filter(item=>item.like == true)
+    const selector = useSelector(store => store.products.products1)
+    const productLiked = selector.filter(item => item.like == true)
     const clickHandler = () => {
         setShow(!show)
     }
@@ -27,12 +27,12 @@ function Header() {
         })
     }, [innerWidth])
     return (
-<div className='sticky top-0 bg-white shadow-lg py-10 px-16 z-10'>  
-            <div className='flex justify-between items-center'>
+        <div className='sticky top-0 bg-white shadow-lg py-10 px-16 z-10'>
+            <div className=' flex justify-between items-center'>
                 <div className='flex justify-center items-center space-x-5'>
                     <h1 className="text-2xl leading-[30px]">Foodieland</h1>
                     <div className='relative hover:cursor-pointer' onClick={showListLikeHandler}>
-                        <span className='absolute bottom-4 right-4 w-3 h-5 text-red-950 font-morabbaMedium bg-white'>{lengthLiked.length}</span>
+                        <span className='absolute bottom-4 right-4 size-full text-red-950 font-morabbaMedium bg-white'>{productLiked.length}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                         </svg>
@@ -83,6 +83,19 @@ function Header() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
+            </div>
+            <div className={`${showListLike ? 'absolute' : 'hidden'} top-28 left-30 shadow-lg w-[400px] h-[300px] bg-[rgba(0,0,0,0.9)] rounded-2xl text-white overflow-y-auto`}>
+                <div className='flex flex-col p-5 gap-5'>
+                    {productLiked.length ?
+                        productLiked.map((item,index) =><div className='flex justify-start items-center gap-5 border-b-[1px] last-of-type:border-none border-solid border-red-200 pb-3'>
+                            <span>{index + 1}</span>
+                            <img className='w-20 h-20 object-cover rounded-full overflow-hidden' src={`../../${item.img}`} /> 
+                            <h2 key={item.id}>{item.name}</h2>
+                        </div>)
+                        :
+                        <h2 className='text-right'>هیچ محصولی در سبد نیست</h2>
+                    }
+                </div>
             </div>
         </div>
     )
