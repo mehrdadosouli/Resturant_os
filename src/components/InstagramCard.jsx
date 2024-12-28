@@ -7,7 +7,8 @@ import img4 from '../assets/Rectangle1.png'
 import Loading from "./Loading";
 
 export default function InstagramCard({ dataInstagram, setDataInstagram }) {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    
     // Slider settings  
     const settings = {
         dots: true,
@@ -15,9 +16,11 @@ export default function InstagramCard({ dataInstagram, setDataInstagram }) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // afterChange: (current) => setDataInstagram(prev=>prev.map(item=>
-        //     item.id == current
-        // )),
+        afterChange: (current) => {  
+                const updatedDataInstagram = [...dataInstagram];  
+                updatedDataInstagram[current].currentSlide = current + 1; 
+                setDataInstagram(updatedDataInstagram); 
+        }
     };
 
     return (
@@ -40,15 +43,15 @@ export default function InstagramCard({ dataInstagram, setDataInstagram }) {
                         </div>
                     </div>
                     <div className='body relative'>
-                        <Slider {...settings}>
+                        <Slider {...settings} >
                             {
                                 item.galery.map((img, index) =>
-                                    <div key={index}>
+                                    <div key={item.id}>
                                         <img src={img} alt="" className="size-full object-cover" onLoad={() => setLoading(false)} />
                                     </div>)
                             }
                         </Slider>
-                        <div className="absolute top-5 right-5 p-1 text-primary_Dark_Text bg-primary_Dark_background rounded-3xl">{`1 / 3`}</div>
+                        <div className="absolute top-5 right-5 p-1 text-primary_Dark_Text bg-primary_Dark_background rounded-3xl">{`${item.currentSlide} / 3`} </div>
                     </div>
                     <div className='footer bg-white p-5'>
                         <div className="flex justify-between items-center">
