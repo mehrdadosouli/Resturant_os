@@ -26,6 +26,10 @@ function Header() {
             setInnerWidth(window.innerWidth)
         })
     }, [innerWidth])
+
+    useEffect(() => {
+            setInnerWidth(window.innerWidth)
+    }, [])
     return (
         <div className='sticky top-0 bg-white shadow-lg py-10 px-16 z-10'>
             <div className=' flex justify-between items-center'>
@@ -41,10 +45,10 @@ function Header() {
                 {/* <tr className={`menu ${innerWidth < 1000 ? (show ? 'menuMobileshow' : 'menuMobilehidden') : 'flex justify-center'}`}>
                     {menuItem.map(item => <td className='flex justify-start gap-5' key={item.id}><Link className='no-underline' to={item.route}>{item.name}</Link> {innerWidth < 1000 && <span>{item.icon}</span>} </td>)}
                 </tr> */}
-                <tr className={` ${innerWidth < 900 ? show ? 'menuMobile menuMobileshow' : 'menuMobile menuMobilehidden' : 'flex justify-center gap-5'}`}>
+                <tr className={`menu ${innerWidth < 1000 ? show ? 'menuMobile menuMobileshow' : 'menuMobile menuMobilehidden' : 'flex justify-center gap-5'}`}>
                     {menuItem.map(item => <td className='flex justify-start gap-5' key={item.id}><Link className='no-underline' to={item.route}>{item.name}</Link> {innerWidth < 1000 && <span>{item.icon}</span>} </td>)}
                 </tr>
-                <div className={`${innerWidth > 900 ? 'flex justify-end gap-10' : 'hidden'}`}>
+                <div className={`${innerWidth > 1000 ? 'flex justify-end gap-10' : 'hidden'}`}>
                     <Link className='no-underline' to='/'>
                         <span className="[&>svg]:h-[17px] [&>svg]:w-[22px]">
                             <svg
