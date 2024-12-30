@@ -55,7 +55,7 @@ button.slick-arrow {
 }
 
 @layer utilities {
-  .menu{
+  .menuMobile{
     position: absolute;
     top: 6rem;
     right: 0;
@@ -77,8 +77,8 @@ button.slick-arrow {
   }
   .menuMobilehidden {
     width: 0;
-    transform: translateX(100%);
-    overflow: hidden;
+    transform: translateX(100%); 
+    overflow: hidden; 
     opacity: 0;
   }
   .menu td {

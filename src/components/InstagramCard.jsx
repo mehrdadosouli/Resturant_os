@@ -29,10 +29,10 @@ export default function InstagramCard({ dataInstagram, setDataInstagram }) {
     };  
 
     return (  
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 justify-between items-center gap-5"> 
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"> 
             {  
                 dataInstagram?.map(item => (  
-                    <div key={item.id} className='lg:max-w-[290px] flex flex-col gap-3'>  
+                    <div key={item.id} className='lg:max-w-[290px] flex flex-col mx-auto gap-3'>  
                         <div className='header flex justify-between items-center px-6 bg-white transform translate-y-2.5'>  
                             <div className='flex justify-start items-center gap-3 py-2'>  
                                 <img className='w-12 h-12' src={img2} alt="User avatar" />  
