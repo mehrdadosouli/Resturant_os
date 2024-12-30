@@ -34,7 +34,7 @@ export default function InstagramCard({ dataInstagram, setDataInstagram }) {
                 dataInstagram?.map(item => (
                     <div key={item.id} className='size-full flex flex-col p-5'>
                         <div className='header flex justify-between items-center px-6 bg-white transform translate-y-2.5'>
-                            <div className='flex justify-start items-center gap-3 py-2'>
+                            <div className='flex justify-start items-center gap-3 py-4'>
                                 <img className='w-12 h-12' src={img2} alt="User avatar" />
                                 <div className='flex flex-col justify-start'>
                                     <div className='flex'>

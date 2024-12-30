@@ -6,7 +6,7 @@ import InfoTemplate from "./InfoTemplate";
 import { useState } from "react";
 import Loading from "./Loading";
 function Banner() {
-  const [loading,setLoading]=useState(true)
+  const [loading, setLoading] = useState(true)
   const data = [
     { id: 1, name: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, facere molestias ipsam modi, nostrum impedit nobis omnis nam quos, culpa neque enim? Vero officiis laborum aperiam! Ipsum assumenda maiores debitis?' },
     { id: 2, name: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, facere molestias ipsam modi, nostrum impedit nobis omnis nam quos, culpa neque enim? Vero officiis laborum aperiam! Ipsum assumenda maiores debitis?' },
@@ -20,14 +20,14 @@ function Banner() {
     centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
-    responsive: [  
-      {  
-        breakpoint: 768, 
-        settings: {  
-          centerMode: false,     
-        }  
-      }  
-    ] 
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: false,
+        }
+      }
+    ]
   };
   return (
     <div className="slider-container">
@@ -37,12 +37,12 @@ function Banner() {
             <div key={item.id} className={`${styles.banner} px-5`}>
               <div className="w-1/2 bg-primary_blue_light_100 flex flex-col justify-between items-start gap-2 rounded-l-3xl md:p-10 p-5">
                 <div className="md:w-60 md:h-20 w-40 h-14 mb-3 bg-white rounded-[30px] flex justify-center items-center gap-5 bg-primary_bg_btn">
-                    <img className="md:w-8 w-6 h-auto" src={imgbanner} alt="" onLoad={() => setLoading(false)}  />
+                  <img className="md:w-8 w-6 h-auto" src={imgbanner} alt="" onLoad={() => setLoading(false)} />
                   <span className="md:text-xl text-base">Hot Recipes</span>
                 </div>
                 <div className="lg:text-6xl md:text-4xl font-morabbaBold lg:leading-[77px] md:leading-[44px]">Spicy delicious chicken wings</div>
                 <div className="text-xl leading-7 font-normal"></div>
-                <InfoTemplate color={true} item={item} dir="col"/>
+                <InfoTemplate color={true} item={item} dir="col" />
                 <div className="md:w-auto w-full flex justify-center items-center lg:text-2xl lg:gap-5 lg:px-6 lg:py-5 md:text-xl md:px-4 md:py-3 md:gap-3 gap-2 mt-2 rounded-3xl text-white bg-black">
                   <span className="md:text-3xl text-lg py-4">View Recipes</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -52,11 +52,11 @@ function Banner() {
                 </div>
               </div>
               <div className="w-1/2">
-              {
-                    loading ? 
+                {
+                  loading ?
                     <Loading /> :
-                <img className="size-full rounded-r-3xl object-cover" src={img1} alt="" />
-              }
+                    <img className="size-full rounded-r-3xl object-cover" src={img1} alt="" />
+                }
               </div>
             </div>
           )
